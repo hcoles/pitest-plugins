@@ -28,7 +28,7 @@ To use these plugins via maven add them as dependencies to the pitest-maven plug
 
 # The examples
 
-## High isloation plugin
+## High isolation plugin
 
 This plugin uses the MutationFilterFactory extension point to increase the isolation between mutants.
 
@@ -42,7 +42,7 @@ To activate this plugin place it on the tool classpath (**not** your project cla
 
 You should see it listed in the loaded plugins at startup and see the string
 
-"Marking all mutations as requiring isolation"
+`"Marking all mutations as requiring isolation"`
 
 in the log.
 
