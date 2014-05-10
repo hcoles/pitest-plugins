@@ -48,6 +48,18 @@ in the log.
 
 Mutation testing will also take a **lot** longer.
 
-## Others
+## All tests plugin
 
-TODO
+This plugin uses the TestPrioritiserFactory extension point to dumbly run the entire test suite against each mutation.
+
+By default pitest only runs tests against a mutation that coverage data suggests will actually exercise the mutation.
+
+In rare cases this strategy might result in a potentialy killing test not being run against a mutation e.g if the mutation is within some code exercised when a singleton is initialised. In this case only first test case to use the singleton will be registered as covering this code. If other test cases were run individually (i.e not as part of a suite) then they would also exercise the code and might detect the mutation.
+
+This plugin avoids these corner cases by ignoring coverage data and always running the full suite of tests. To ensure deterministic behaviour the tests are order alphabetically.
+
+To activate this plugin place it on the too classpath - you should see it listed in the loaded plugins at startup.
+
+This plugin will make mutation testing **very** slow.
+
+
