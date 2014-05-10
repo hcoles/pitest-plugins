@@ -47,6 +47,7 @@
     
     <modules>
         <module>pitest-high-isolation-plugin</module>
+        <module>pitest-all-tests-plugin</module>
     </modules>
     
        <profiles>  
