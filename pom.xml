@@ -84,7 +84,7 @@
         <dependency>
             <groupId>org.pitest</groupId>
             <artifactId>pitest</artifactId>
-            <version>0.34-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
