@@ -2,7 +2,13 @@
 
 Example plugins for pitest.
 
-This repository contains examples of creating plugins for the pitest mutation testing system. Several of them may be useful in their own right, particularly to those working in accademic research.
+This repository contains examples of creating plugins for the pitest mutation testing system. Several of them may be useful in their own right, particularly to those working in academic research.
+
+These plugins are not currently released. To install locally from source
+
+```bash
+mvn install
+```
 
 To use these plugins via maven add them as dependencies to the pitest-maven plugin (i.e **not** to your project dependencies) e.g
 
