@@ -54,6 +54,8 @@ in the log.
 
 Mutation testing will also take a **lot** longer.
 
+**If you require complete isolation with a seperate JVM for each mutant for your research project this can be achieved without this plugin by setting the parameter mutationUnitSize to 1. This will be very very slow but should guarantee complete isolation.**
+
 ## All tests plugin
 
 This plugin uses the TestPrioritiserFactory extension point to dumbly run the entire test suite against each mutation.
