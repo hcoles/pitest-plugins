@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 
 import org.pitest.classinfo.ClassName;
@@ -25,7 +26,7 @@ public class AllTestsPrioritiserFactory implements TestPrioritiserFactory {
     return "All tests prioritiser";
   }
 
-  public TestPrioritiser makeTestPrioritiser(CodeSource code,
+  public TestPrioritiser makeTestPrioritiser(Properties properties, CodeSource code,
       CoverageDatabase coverage) {
     Set<TestInfo> tis = new HashSet<TestInfo>();
     FCollection.flatMapTo(code.getCodeUnderTestNames(), classToTests(coverage), tis);
