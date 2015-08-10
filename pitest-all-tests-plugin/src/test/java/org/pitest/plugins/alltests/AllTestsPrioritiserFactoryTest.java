@@ -6,6 +6,7 @@ import static org.pitest.classinfo.ClassName.fromString;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 
 import org.fest.util.Collections;
 import org.junit.Test;
@@ -33,6 +34,9 @@ public class AllTestsPrioritiserFactoryTest {
   private ClassName                  bar    = fromString("bar");
 
   @Mock
+  private Properties                 props;
+
+  @Mock
   private CodeSource                 code;
 
   @Mock
@@ -46,7 +50,7 @@ public class AllTestsPrioritiserFactoryTest {
         Arrays.asList(test("a"), test("b")));
     when(coverage.getTestsForClass(bar)).thenReturn(Arrays.asList(test("c")));
 
-    TestPrioritiser prioritiser = testee.makeTestPrioritiser(code, coverage);
+    TestPrioritiser prioritiser = testee.makeTestPrioritiser(props, code, coverage);
     List<TestInfo> actual = prioritiser.assignTests(null);
 
     assertThat(actual).containsExactly(test("a"), test("b"), test("c"));
@@ -60,7 +64,7 @@ public class AllTestsPrioritiserFactoryTest {
     when(coverage.getTestsForClass(foo)).thenReturn(Arrays.asList(test("a")));
     when(coverage.getTestsForClass(bar)).thenReturn(Arrays.asList(test("a")));
 
-    TestPrioritiser prioritiser = testee.makeTestPrioritiser(code, coverage);
+    TestPrioritiser prioritiser = testee.makeTestPrioritiser(props, code, coverage);
     List<TestInfo> actual = prioritiser.assignTests(null);
 
     assertThat(actual).containsExactly(test("a"));
@@ -75,7 +79,7 @@ public class AllTestsPrioritiserFactoryTest {
         Arrays.asList(test("z"), test("b"), test("e")));
     when(coverage.getTestsForClass(bar)).thenReturn(Arrays.asList(test("a")));
 
-    TestPrioritiser prioritiser = testee.makeTestPrioritiser(code, coverage);
+    TestPrioritiser prioritiser = testee.makeTestPrioritiser(props, code, coverage);
     List<TestInfo> actual = prioritiser.assignTests(null);
 
     assertThat(actual).containsExactly(test("a"), test("b"), test("e"),

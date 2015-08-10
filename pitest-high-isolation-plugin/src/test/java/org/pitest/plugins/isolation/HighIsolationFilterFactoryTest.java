@@ -11,12 +11,14 @@ import org.pitest.mutationtest.config.PluginServices;
 import org.pitest.plugin.ToolClasspathPlugin;
 import org.pitest.plugins.isolation.HighIsolationFilterFactory;
 
+import java.util.Properties;
+
 public class HighIsolationFilterFactoryTest {
 
   @Test
   public void shouldCreateHighIsolationFilters() {
     HighIsolationFilterFactory testee = new HighIsolationFilterFactory();
-    assertThat(testee.createFilter(someSource(), someInt())).isNotNull();
+    assertThat(testee.createFilter(someProps(), someSource(), someInt())).isNotNull();
   }
 
   @Test
@@ -44,4 +46,7 @@ public class HighIsolationFilterFactoryTest {
     return null;
   }
 
+  private Properties someProps() {
+    return null;
+  }
 }
