@@ -16,7 +16,7 @@ To use these plugins via maven add them as dependencies to the pitest-maven plug
       <plugin>
         <groupId>org.pitest</groupId>
         <artifactId>pitest-maven</artifactId>
-        <version>0.34-SNAPSHOT</version>
+        <version>1.1.7-SNAPSHOT</version>
 
         <dependencies>
           <dependency>
@@ -70,4 +70,8 @@ To activate this plugin place it on the too classpath - you should see it listed
 
 This plugin will make mutation testing **very** slow.
 
+## Plugin configuration reporter plugin
 
+This plugin displays plugin configuration passed to PIT from user configuration. It was created for acceptance purposes in Gradle/Maven integration and **doesn't have real life use cases**,
+
+It uses MutationResultListenerFactory extension point which requires adding `pluginConfigurationReporter` (its name) to requested `outputFormats` to enable it. 
