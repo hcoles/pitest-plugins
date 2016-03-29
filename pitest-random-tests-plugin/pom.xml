@@ -3,14 +3,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <parent>
         <artifactId>pitest-plugins-parent</artifactId>
         <groupId>org.pitest.plugins</groupId>
         <version>0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>pitest-high-isolation-plugin</artifactId>
-    <name>pitest-high-isolation-plugin</name>
+    <artifactId>pitest-random-tests-plugin</artifactId>
+    <name>pitest-random-tests-plugin</name>
     <url>http://pitest.org</url>
-    <description>Increased isolation plugin</description>
+    <description>Runs the entire test suite in random order</description>
 
 </project>
